@@ -1,4 +1,4 @@
-from src.masks import get_mask_card_number, get_mask_account
+from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(info: str) -> str:
@@ -19,7 +19,7 @@ def get_date(time_data: str) -> str:
     """Вывод даты в нужном формате"""
     split_time_data = time_data.split("T")[0]
     split_time_data_new = split_time_data.split("-")
-    return f'"{split_time_data_new[2]}.{split_time_data_new[1]}.{split_time_data_new[0]}"'
+    return f'{split_time_data_new[2]}.{split_time_data_new[1]}.{split_time_data_new[0]}'
 
 
 if __name__ == "__main__":
