@@ -7,7 +7,8 @@ def get_mask_card_number(num_card: str) -> str:
         return "Номер карты должен состоять из 16 цифр"
 
 
-print(get_mask_card_number("7000792289606361"))
+if __name__ == "__main__":
+    print(get_mask_card_number("7000792289606361"))
 
 
 def get_mask_account(num_account: str) -> str:
@@ -18,4 +19,5 @@ def get_mask_account(num_account: str) -> str:
         return "В номере счета должно быть больше 4 цифр"
 
 
-print(get_mask_account("73654108430135874305"))
+if __name__ == "__main__":
+    print(get_mask_account("73654108430135874305"))
