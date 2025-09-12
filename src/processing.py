@@ -1,6 +1,5 @@
 def filter_by_state(records: list[dict[str, str]], status: str = "EXECUTED") -> list[dict[str, str]]:
-    """Фильтрация списка словарей по значению ключа state
-    """
+    """Фильтрация списка словарей по значению ключа state"""
     return [record for record in records if record["state"] == status]
 
 
