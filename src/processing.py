@@ -1,6 +1,7 @@
-def filter_by_state(records: list[dict], status: str = "EXECUTED") -> list[dict]:
-    """Фильтрация списка словарей по значению ключа state"""
-    return [meaning for meaning in records if meaning["state"] == status]
+def filter_by_state(records: list[dict[str, str]], status: str = "EXECUTED") -> list[dict[str, str]]:
+    """Фильтрация списка словарей по значению ключа state
+    """
+    return [record for record in records if record["state"] == status]
 
 
 if __name__ == "__main__":
@@ -12,9 +13,9 @@ if __name__ == "__main__":
     ]))
 
 
-def sort_by_date(operations: list[dict], order: bool = True) -> list[dict]:
+def sort_by_date(operations: list[dict[str, str]], order: bool = True) -> list[dict[str, str]]:
     """Сортировка списка словарей по ключу date"""
-    return sorted(operations, key=lambda p: p["date"], reverse=order)
+    return sorted(operations, key=lambda operation: operation["date"], reverse=order)
 
 
 if __name__ == "__main__":
