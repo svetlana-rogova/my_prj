@@ -4,7 +4,7 @@ from typing import Any, Generator
 def filter_by_currency(
     list_transactions: list[dict[str, Any]], currency: str = "USD"
 ) -> Generator[dict[str, Any], None, None]:
-    """Функция для вывода транзакция по критерию"""
+    """Функция для вывода транзакции по критерию"""
     return (
         transaction
         for transaction in list_transactions
