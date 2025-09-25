@@ -54,14 +54,8 @@ def test_card_number_generator_one() -> None:
 
 
 @pytest.mark.parametrize(
-    "start_number, end_number, number_card",
-    [
-    (2, 10, "0000 0000 0000 0002"),
-    (10, 16, "0000 0000 0000 0010")
-    ]
+    "start_number, end_number, number_card", [(2, 10, "0000 0000 0000 0002"), (10, 16, "0000 0000 0000 0010")]
 )
 def test_card_number_generator_two(start_number: int, end_number: int, number_card: int) -> None:
     gen = card_number_generator(start_number, end_number)
     assert next(gen) == number_card
-
-
