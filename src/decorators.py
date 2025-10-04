@@ -4,7 +4,7 @@ from functools import wraps
 
 def log(filename=None):
     logger = logging.getLogger(__name__)
-    logging.basicConfig(level=logging.DEBUG)
+    logger.setLevel(logging.INFO)
     if not logger.handlers:
         if filename:
             handler = logging.FileHandler(filename, encoding="utf-8")
@@ -14,7 +14,7 @@ def log(filename=None):
 
     def my_decorator(func):
         @wraps(func)
-        def wrappers(*args, **kwargs):
+        def wrapper(*args, **kwargs):
             logger.info("Начало работы программы")
             try:
                 result = func(*args, **kwargs)
@@ -25,8 +25,8 @@ def log(filename=None):
             else:
                 logger.info(f"Результат работы функции {func.__name__}:{result}")
                 logger.info("Окончание работы программы")
-                return result
+                print(result)
 
-        return wrappers
+        return wrapper
 
     return my_decorator
