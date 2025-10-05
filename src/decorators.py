@@ -4,6 +4,7 @@ from typing import Any
 
 
 def log(filename=None):
+    """ Декоратор для логирования выполнения функции."""
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.INFO)
     if not logger.handlers:
