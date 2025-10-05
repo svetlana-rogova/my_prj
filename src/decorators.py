@@ -1,5 +1,6 @@
 import logging
 from functools import wraps
+from typing import Any
 
 
 def log(filename=None):
@@ -20,13 +21,12 @@ def log(filename=None):
                 result = func(*args, **kwargs)
             except Exception as e:
                 logger.exception("%s error: %s. Inputs:  %s,  %s", func.__name__, e, args, kwargs)
-                print("Программа упала с ошибкой")
                 logger.info("Окончание работы программы")
+                return "Ошибка в программе, проверьте введенные значения"
             else:
                 logger.info(f"Результат работы функции {func.__name__}:{result}")
                 logger.info("Окончание работы программы")
-                print(result)
-
+                return result
         return wrapper
 
     return my_decorator
