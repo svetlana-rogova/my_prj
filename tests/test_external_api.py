@@ -35,4 +35,4 @@ def test_amount_transactions(mock_get):
     }
 
     mock_get.return_value.status_code = 400
-    assert amount_transactions(transaction_usd) == "Возникла ошибка, перепроверьте введенные данные"
+    assert amount_transactions(transaction_usd) == 0.0

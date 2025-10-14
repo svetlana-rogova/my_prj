@@ -14,26 +14,15 @@ def amount_transactions(transaction):
     amount = float(transaction["operationAmount"]["amount"])
     currency = transaction["operationAmount"]["currency"]["code"]
     if currency == "RUB":
-        return amount
+        return float(amount)
     elif currency in ("USD", "EUR"):
         url = f"https://api.apilayer.com/exchangerates_data/convert?to=RUB&from={currency}&amount={amount}"
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
             data = response.json()
-            return data.get("result")
+            return float(data.get("result"))
         else:
-            return "Возникла ошибка, перепроверьте введенные данные"
+            return 0.0
     else:
-        return "Возникла ошибка, перепроверьте введенные данные"
+        return 0.0
 
-
-print(
-    amount_transactions(
-        {
-            "id": 41428829,
-            "state": "EXECUTED",
-            "date": "2019-07-03T18:35:29.512364",
-            "operationAmount": {"amount": "100", "currency": {"name": "USD", "code": "USD"}},
-        }
-    )
-)
