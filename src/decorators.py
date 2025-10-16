@@ -1,6 +1,5 @@
 import logging
 from functools import wraps
-from typing import Any
 
 
 def log(filename=None):

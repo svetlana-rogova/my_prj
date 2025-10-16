@@ -25,4 +25,3 @@ def amount_transactions(transaction):
             return 0.0
     else:
         return 0.0
-
