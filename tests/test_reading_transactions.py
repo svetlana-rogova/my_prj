@@ -1,6 +1,8 @@
-from src.reading_transactions import read_transactions_csv, read_transactions_excel
-from unittest.mock import mock_open, patch
+from unittest.mock import mock_open
+from unittest.mock import patch
 
+from src.reading_transactions import read_transactions_csv
+from src.reading_transactions import read_transactions_excel
 
 mock_csv_data = """id;state;date;amount;currency_name;currency_code;from;to;description\n
 650703; EXECUTED;2023-09-05T11:30:32Z;16210;Sol;PEN;"
