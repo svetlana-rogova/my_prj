@@ -14,8 +14,8 @@ def read_transactions_csv(file_csv):
 
 
 file_transactions = os.path.join(os.path.dirname(__file__), "..", "data", "transactions.csv")
-# if __name__ == "__main__":
-#     print(read_transactions_csv(file_transactions))
+if __name__ == "__main__":
+    print(read_transactions_csv(file_transactions))
 
 
 def read_transactions_excel(file_excel):
