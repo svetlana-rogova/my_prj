@@ -2,6 +2,8 @@ from typing import Any
 
 import pytest
 
+import pandas as pd
+
 
 @pytest.fixture
 def enumeration_dictionaries() -> list[dict[str, str]]:
@@ -44,3 +46,9 @@ def list_transactions() -> list[dict[str, Any]]:
             "to": "Счет 40817810432100056789",
         },
     ]
+
+
+@pytest.fixture
+def mock_df():
+    mock_df = pd.DataFrame({"id": [650703], "state": ["EXECUTED"], "amount": [16210]})
+    return mock_df
