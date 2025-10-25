@@ -4,9 +4,8 @@ from datetime import datetime
 
 from src.reading_transactions import read_transactions_csv
 from src.reading_transactions import read_transactions_excel
-from src.utils import data_transactions
 from src.search import process_bank_search
-
+from src.utils import data_transactions
 
 file_json = data_transactions(os.path.join(os.path.dirname(__file__), "..", "data", "operations.json"))
 file_csv = read_transactions_csv(os.path.join(os.path.dirname(__file__), "..", "data", "transactions.csv"))

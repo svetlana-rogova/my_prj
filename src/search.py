@@ -6,7 +6,6 @@ from src.reading_transactions import read_transactions_csv
 from src.reading_transactions import read_transactions_excel
 from src.utils import data_transactions
 
-
 file_json = data_transactions(os.path.join(os.path.dirname(__file__), "..", "data", "operations.json"))
 file_csv = read_transactions_csv(os.path.join(os.path.dirname(__file__), "..", "data", "transactions.csv"))
 file_excel = read_transactions_excel(os.path.join(os.path.dirname(__file__), "..", "data", "transactions_excel.xlsx"))
