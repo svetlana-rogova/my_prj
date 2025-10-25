@@ -52,3 +52,53 @@ def list_transactions() -> list[dict[str, Any]]:
 def mock_df():
     mock_df = pd.DataFrame({"id": [650703], "state": ["EXECUTED"], "amount": [16210]})
     return mock_df
+
+
+@pytest.fixture
+def list_transactions_for_assert():
+    list_transactions = [
+        {
+            "id": "650703",
+            "state": "PENDING",
+            "date": "2023-09-05T11:30:32Z",
+            "amount": "16210",
+            "currency_name": "Sol",
+            "currency_code": "PEN",
+            "from": "Счет 58803664561298323391",
+            "to": "Счет 39745660563456619397",
+            "description": "Перевод организации",
+        },
+        {
+            "id": "3598919",
+            "state": "EXECUTED",
+            "date": "2020-12-06T23:00:58Z",
+            "amount": "29740",
+            "currency_name": "Peso",
+            "currency_code": "COP",
+            "from": "Discover 3172601889670065",
+            "to": "Discover 0720428384694643",
+            "description": "Перевод с карты на карту",
+        },
+        {
+            "id": "441945886",
+            "state": "EXECUTED",
+            "date": "2019-08-26T10:50:58.294041",
+            "operationAmount": {
+                "amount": "31957.58",
+                "currency": {
+                    "name": "руб.",
+                    "code": "RUB"
+                }
+            },
+            "description": "Перевод организации",
+            "from": "Maestro 1596837868705199",
+            "to": "Счет 64686473678894779589"
+        }
+    ]
+    return list_transactions
+
+
+@pytest.fixture
+def list_categories_for_assert():
+    list_categories = ['Перевод организации', 'Перевод с карты на карту']
+    return list_categories
