@@ -5,8 +5,9 @@ import os
 
 def data_transactions(input_file):
     """Функция для чтения файла и вывода списка с данными о транзакциях"""
+    log_path = os.path.join(os.path.dirname(__file__), "../logs/utils.log")
     logger = logging.getLogger(__name__)
-    file_handler = logging.FileHandler("../logs/utils.log", "w", encoding="utf-8")
+    file_handler = logging.FileHandler(log_path, "w", encoding="utf-8")
     file_formatter = logging.Formatter("%(asctime)s %(filename)s %(levelname)s %(message)s")
     file_handler.setFormatter(file_formatter)
     logger.addHandler(file_handler)
